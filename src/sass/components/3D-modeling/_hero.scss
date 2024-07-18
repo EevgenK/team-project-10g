@@ -1,0 +1,53 @@
+
+.modeling-hero__container {
+  padding-top: 20px;
+    padding-bottom: 40px;
+
+  @include mq($width-tablet) {
+      padding-top: 14px;
+    }
+
+  @include mq($width-desktop) {
+    padding: 60px 149px 40px;
+  }
+}
+
+.modeling-hero__title {
+  margin-bottom: 16px;
+
+  @include mq($width-desktop) {
+  margin-bottom: 24px;}
+}
+
+.modeling-hero__box {
+
+  @include mq($width-desktop) {
+  display: flex;
+  }
+}
+
+.modeling-hero__description {
+  width: 100%;
+  max-width: 440px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.27;
+
+  &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+  @include mq($width-tablet) {
+    max-width: 515px;
+    }
+
+  @include mq($width-desktop) {
+    font-size: 18px;
+  &:not(:last-child) {
+    margin-bottom: 0;
+      margin-right: 72px;
+    }
+  }
+}
+
+

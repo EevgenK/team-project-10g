@@ -1,0 +1,106 @@
+.gallary__image {
+  @include animate(top left width height transform);
+}
+
+.is-fixed {
+}
+
+.gallary__image.is-fixed {
+  position: fixed;
+  top: var(--top);
+  left: var(--left);
+  width: var(--width);
+  height: var(--height);
+  transform: translate(0px, 0px);
+}
+
+.gallary__image.is-surfaced {
+  position: fixed;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  object-fit: contain;
+
+  width: clamp(236px, calc(100vw - 84px), 396px);
+
+  height: calc(100vh - 64px);
+
+  @include mq($width-tablet) {
+    width: 554px;
+  }
+
+  @include mq($width-desktop) {
+    width: 906px;
+  }
+}
+
+.gallary__backdrop {
+  display: none;
+  &.is-surfaced {
+    display: block;
+  }
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(43, 43, 43, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.is-surfaced .gallary__btn-panel {
+  position: fixed;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gallary__btn-next,
+.gallary__btn-prev {
+  display: none;
+
+  .is-surfaced & {
+    display: block;
+  }
+
+  padding: 4;
+
+  color: #ffffff;
+
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+
+  &:hover,
+  &:focus {
+    color: #dbd6d6;
+    background-color: #fff6f615;
+  }
+}
+
+.arrow-previous__icon,
+.arrow-next__icon {
+  fill: currentColor;
+  width: 11px;
+  height: 11px;
+
+  object-position: center;
+
+  @include mq($width-tablet) {
+    width: 26px;
+    height: 26px;
+  }
+  @include mq($width-desktop) {
+    width: 42px;
+    height: 42px;
+  }
+}

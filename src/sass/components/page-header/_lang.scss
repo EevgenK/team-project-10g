@@ -1,0 +1,43 @@
+.lang {
+  order: 1;
+  margin-left: 14px;
+  @include animate(transform text-shadow);
+
+  @include mq($width-tablet) {
+    order: 0;
+    margin-left: 0;
+    margin-right: 28px;
+  }
+
+  @include mq($width-desktop) {
+    margin-right: 108px;
+  }
+}
+
+.lang__select {
+  padding: 10px 0 10px 10px;
+
+  font-family: $font-secondary;
+  @include font(14px, 18px, 0.01em, 700);
+  color: #bdbdbd;
+  border: none;
+  border-radius: 4px;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  @include mq($width-tablet) {
+    padding: 10px;
+  }
+
+  & option {
+    font-weight: inherit;
+  }
+}
+
+.lang:hover,
+.lang:focus {
+  transform: scale(1.1);
+  text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}

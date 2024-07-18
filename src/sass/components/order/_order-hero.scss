@@ -1,0 +1,199 @@
+.order-hero {
+  padding-bottom: 40px;
+  padding-top: 20px;
+
+  @include mq($width-desktop) {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+}
+
+.order-hero__title {
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  font-size: 24px;
+  color: getColor('title-text');
+  margin-bottom: 16px;
+
+  text-transform: uppercase;
+
+  @include mq($width-tablet) {
+    font-size: 36px;
+    text-align: start;
+  }
+
+  @include mq($width-desktop) {
+    font-size: 48px;
+    text-align: start;
+    margin-bottom: 24px;
+  }
+}
+
+.order-hero__wrap {
+  @include mq($width-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  @include mq($width-desktop) {
+    align-items: flex-start;
+  }
+}
+
+.order-hero__bg {
+  width: 280px;
+  height: 171px;
+  background-image: url(../images/order/mobile/order-img.jpg);
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 280px 171px;
+  border-radius: 15px;
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .order-hero__bg {
+    background-image: url(../images/order/mobile/order-img@2x.jpg);
+  }
+}
+
+@include mq($width-tablet) {
+  .order-hero__bg {
+    margin-left: 0;
+    margin-right: 32px;
+    background-image: url(../images/order/tablet/order-tablet-img.jpg);
+    width: 100%;
+    height: 158px;
+    background-size: 336px 158px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .order-hero__bg {
+      background-image: url(../images/order/tablet/order-tablet-img@2x.jpg);
+    }
+  }
+}
+
+@include mq($width-desktop) {
+  .order-hero__bg {
+    background-image: url(../images/order/desktop/mozjpeg/order-desktop-img.jpg);
+    width: 100%;
+    height: 400px;
+    background-size: 555px 400px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .order-hero__bg {
+      background-image: url(../images/order/desktop/mozjpeg/order-desktop-img@2x.jpg);
+    }
+  }
+}
+
+.order-hero__list {
+  margin-top: 16px;
+  width: 100%;
+
+  @include mq($width-tablet) {
+    margin-top: 0;
+  }
+}
+
+.order-hero__ad {
+  font-weight: 300;
+  line-height: 1.25;
+  width: 100%;
+  @include mq($width-desktop) {
+    font-size: 18px;
+    line-height: 1.28;
+  }
+
+  color: getColor('primary-text');
+  &:not(:first-child) {
+    margin-top: 16px;
+
+    @include mq($width-tablet) {
+      margin-top: 0;
+    }
+    @include mq($width-desktop) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.order-hero__container {
+  @include mq($width-desktop) {
+    padding-left: 149px;
+    padding-right: 149px;
+    position: relative;
+  }
+}
+
+.order-hero__gallery {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  @extend %list;
+  @include mq(null, $width-desktop) {
+    display: none;
+  }
+}
+
+.order-hero__item {
+  overflow: hidden;
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.25);
+
+  &:nth-child(1) {
+    border-radius: 0px 72px 72px 0px;
+  }
+
+  &:nth-child(2) {
+    border-radius: 72px 0px;
+  }
+
+  &:nth-child(3) {
+    border-radius: 0px 0px 72px 0px;
+  }
+}
+
+.order-hero__picture {
+  width: 203px;
+  height: 203px;
+  background-size: 203px 203px;
+
+  &--first {
+    background-image: url(../images/order/desktop/mozjpeg/order-img-1.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/order/desktop/mozjpeg/order-img-1@2x.jpg);
+    }
+  }
+
+  &--second {
+    background-image: url(../images/order/desktop/mozjpeg/order-img-2.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/order/desktop/mozjpeg/order-img-2@2x.jpg);
+    }
+  }
+
+  &--last {
+    background-image: url(../images/order/desktop/mozjpeg/order-img-3.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/order/desktop/mozjpeg/order-img-3@2x.jpg);
+    }
+  }
+}

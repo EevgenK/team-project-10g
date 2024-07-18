@@ -1,0 +1,189 @@
+.footer {
+  padding-top: 32px;
+    padding-bottom: 32px;
+  background-color: getColor('background');
+  box-shadow: 5px 2px 5px 8px rgba(72, 121, 150, 0.1);
+
+  @include mq($width-desktop) {
+      padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include mq($width-tablet) {
+    align-items: stretch;
+  }
+
+  @include mq($width-desktop) {
+    flex-direction: row;
+  }
+}
+
+.footer__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq($width-tablet) {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  @include mq($width-desktop) {
+    margin-left: 277px;
+  }}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 19px;
+
+  @include mq($width-tablet) {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;  }
+
+  @include mq($width-desktop) {
+    margin: 0;  }}
+
+.footer-nav {
+  margin-bottom: 24px;
+
+  @include mq($width-tablet) {
+    text-align: start;
+    margin-right: 52px;
+    margin-bottom: 0;
+  }
+
+    @include mq($width-desktop) {
+      margin-right: 103px;
+    }
+}
+
+.footer-nav__list {
+  @extend %list;
+}
+
+.footer-nav__item {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.footer-nav__link {
+  @extend %link;
+  display: flex;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  outline: none;
+
+  @include mq($until: $width-tablet) {
+    justify-content: center;
+  }
+  
+  @include animate(color transform text-shadow);
+
+
+  &:hover,
+  &:focus {
+      color: getColor('title-text');
+      transform: scale(1.05);
+      text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.footer-socials {
+  @extend %list;
+  margin-bottom: 24px;
+
+  @include mq($width-tablet) {
+    text-align: start;
+  }
+
+}
+
+.footer-socials__item {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.footer-socials__link {
+  @extend %link;
+  display: flex;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  outline: none;
+
+  @include animate(color transform text-shadow);
+
+  &:hover,
+    &:focus {
+      color: getColor('title-text');
+      transform: scale(1.05);
+      text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+}
+
+.footer-contacts {
+  @extend %list;
+  font-style: normal;
+
+  @include mq($width-tablet) {
+    margin-left: auto;
+    text-align: end;
+  }
+
+  @include mq($width-desktop) {
+    text-align: start;
+    margin-left: 161px;
+    width: 390px;
+  }
+}
+
+.footer-contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.footer-contacts__link {
+  @extend %link;
+  color: getColor('title-text');
+
+  &:focus {
+      font-weight: 700;
+      outline: none;
+    }
+}
+
+.footer-contacts__name {
+  margin-bottom: 8px;
+}
+
+.footer-contacts__phones {
+  @extend %list;
+}
+
+.phones__item {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.phones__link {
+  @extend %link;
+  color: getColor('title-text');
+
+  &:focus {
+      font-weight: 700;
+      outline: none;
+    }
+}

@@ -1,0 +1,215 @@
+.main-hero,
+.main-gallery {
+  padding-bottom: 40px;
+
+  @include mq($width-tablet) {
+    padding-bottom: 60px;
+  }
+  @include mq($width-desktop) {
+    padding-bottom: 120px;
+  }
+}
+
+.main-hero {
+  padding-top: 20px;
+  @include mq($width-tablet) {
+    padding-top: 14px;
+  }
+  @include mq($width-desktop) {
+    padding-top: 58px;
+  }
+}
+
+.main-gallery > .container {
+  @include mq($width-desktop) {
+    padding: 0 149px;
+  }
+}
+
+.main-hero__title {
+  font-family: $font-hero;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(21 / 18);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  width: 280px;
+  color: getColor('primary-text');
+  @include mq($width-tablet) {
+    font-size: 24px;
+    line-height: calc(28 / 24);
+    width: 336px;
+    margin-bottom: 60px;
+  }
+  @include mq($width-desktop) {
+    font-size: 48px;
+    line-height: calc(56 / 48);
+    width: 630px;
+    margin-left: 426px;
+    margin-right: 384px;
+  }
+}
+
+.main-hero__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 32px;
+
+  @include mq($width-tablet) {
+    margin-bottom: 60px;
+    gap: 29px;
+  }
+
+  @include mq($width-desktop) {
+    gap: 32px;
+  }
+}
+
+.main-hero__item {
+  border-radius: 50%;
+  overflow: hidden;
+
+  width: min(114px, calc((100% + 15px) / 3 - 15px));
+
+  @include mq($width-desktop) {
+    width: 203px;
+  }
+  &:last-child {
+    border-radius: 0 25px 0 25px;
+    @include mq($width-desktop) {
+      border-radius: 0 72px 0 72px;
+    }
+  }
+  &:first-child {
+    border-radius: 0px 35px 0px 0px;
+    @include mq($width-desktop) {
+      border-radius: 0 72px 0 0;
+    }
+  }
+}
+
+.main-hero__text {
+  font-family: $font-hero;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  text-align: center;
+  @include mq($width-tablet) {
+    font-size: 18px;
+    line-height: calc(21 / 21);
+  }
+  @include mq($width-desktop) {
+    font-size: 36px;
+    line-height: calc(42 / 36);
+  }
+}
+
+.main-gallery__title {
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: calc(30 / 24);
+  color: getColor('title-text');
+  margin-bottom: 16px;
+  @include mq($width-tablet) {
+    font-size: 36px;
+    line-height: calc(45 / 36);
+  }
+  @include mq($width-desktop) {
+    font-size: 48px;
+    line-height: calc(60 / 48);
+  }
+}
+
+.main-gallery__list {
+  @extend %list;
+  @include mq($width-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+  @include mq($width-desktop) {
+    row-gap: 40px;
+  }
+}
+
+.main-gallery__item {
+  display: block;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(null, $width-tablet) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  @include mq($width-tablet) {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+.main-gallery__description {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  color: getColor('title-text');
+  margin-top: 8px;
+  @include mq($width-tablet) {
+    margin-top: 16px;
+  }
+  @include mq($width-desktop) {
+    font-size: 18px;
+    line-height: calc(23 / 18);
+  }
+}
+
+.main-hero > .container {
+  position: relative;
+}
+
+.main-hero__arrow {
+  position: absolute;
+  bottom: 55px;
+  left: 225px;
+  @include animate(fill);
+  &:hover,
+  &:focus {
+    fill: getColor('active-color');
+    cursor: pointer;
+  }
+  @include mq(null, $width-tablet) {
+    display: none;
+  }
+  @include mq($width-tablet) {
+    width: 16px;
+    height: 16px;
+    left: 133px;
+    bottom: 72px;
+  }
+
+  @include mq($width-desktop) {
+    width: 32px;
+    height: 32px;
+    left: 230px;
+    bottom: 60px;
+  }
+}
+
+// RESPONSIVE FOR MOR GALLERY
+@media screen and (max-width: 767px) {
+  .main-gallery__img--width {
+    width: calc(100%);
+    max-width: 440px;
+  }
+  .main-gallery__item {
+    width: calc(100%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
